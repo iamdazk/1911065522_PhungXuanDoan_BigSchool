@@ -23,8 +23,8 @@ textarea {
     max-width: 280px;
 }
 .navbar-inverse {
-    background-color: #d41d50;
-    border-color:antiquewhite;
+    background-color: #992525;
+    border-color: antiquewhite;
 }
 .navbar-inverse .navbar-bar > li > a{
     color:white;
