@@ -32,11 +32,11 @@ namespace _1911065522_PhungXuanDoan_BigSchool.Controllers
        // [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {
-            /*if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 viewModel.Categories = _dbContext.Categories.ToList();
                 return View("Create", viewModel);
-            }*/
+            }
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),

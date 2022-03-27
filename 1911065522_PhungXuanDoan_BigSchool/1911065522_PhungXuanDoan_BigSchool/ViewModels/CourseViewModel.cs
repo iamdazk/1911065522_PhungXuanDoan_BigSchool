@@ -10,15 +10,15 @@ namespace _1911065522_PhungXuanDoan_BigSchool.ViewModels
     public class CourseViewModel
     {
         //public int Id { get; set; }
-        //[Required]
+        [Required]
         public string Place { get; set; }
-       // [Required]
+        [Required]
         //[FutureDate]
         public string Date { get; set; }
-       // [Required]
+        [Required]
         //[ValidTime]
         public string Time { get; set; }
-        // [Required]
+        [Required]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         /*public string Heading { get; set; }
