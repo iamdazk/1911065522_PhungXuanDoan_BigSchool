@@ -69,7 +69,7 @@ namespace _1911065522_PhungXuanDoan_BigSchool.Controllers
             return View(viewModel);
         }
         [Authorize]
-        public ActionResult Mine()
+        public ActionResult Mine(int? page)
         {
             var userId = User.Identity.GetUserId();
             var courses = _dbContext.Courses
