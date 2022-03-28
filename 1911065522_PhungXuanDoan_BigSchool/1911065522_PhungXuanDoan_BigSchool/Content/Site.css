@@ -24,7 +24,7 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #d41d50;
+    background-color: #f18ff5;
     border-color: #fbf6f6;
 }
 
@@ -67,4 +67,7 @@ textarea {
 
 .course > li:hover .action {
     display: block;
+}
+.navbar-brand {
+    border: 4px inset #aa0bf4;
 }
