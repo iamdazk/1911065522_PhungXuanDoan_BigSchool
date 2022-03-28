@@ -20,7 +20,7 @@ namespace _1911065522_PhungXuanDoan_BigSchool.Controllers
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
-            var userId = User.Identity.GetUserId();
+            /*var userId = User.Identity.GetUserId();
             if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendance already exists!");
             var attendance = new Attendance
@@ -32,9 +32,27 @@ namespace _1911065522_PhungXuanDoan_BigSchool.Controllers
 
             _dbContext.Attendances.Add(attendance);
             _dbContext.SaveChanges();
-            return Ok();
+            return Ok();*/
+            var userId = User.Identity.GetUserId();
+            var attendance = new Attendance
+            {
+                CourseId = attendanceDto.CourseId,
+                AttendeeId = userId
+            };
+
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
+            {
+
+                //_dbContext.Attendances.Remove(attendance);
+                _dbContext.Entry(attendance).State = System.Data.Entity.EntityState.Deleted;
+                _dbContext.SaveChanges();
+                return Json(new { isFollow = false });
+            }
+            _dbContext.Attendances.Add(attendance);
+            _dbContext.SaveChanges();
+            return Json(new { isFollow = true });
         }
-        [HttpDelete]
+        /*[HttpDelete]
         public IHttpActionResult DeleteAttendance(int id)
         {
             var userId = User.Identity.GetUserId();
@@ -49,7 +67,7 @@ namespace _1911065522_PhungXuanDoan_BigSchool.Controllers
             _dbContext.SaveChanges();
 
             return Ok(id);
-        }
+        }*/
 
     }
 }
