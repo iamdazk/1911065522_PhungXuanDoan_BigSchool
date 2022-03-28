@@ -71,3 +71,7 @@ textarea {
 .navbar-brand {
     border: 4px inset #aa0bf4;
 }
+.search {
+    max-width: 280px;
+    margin-top: 3%;
+}
